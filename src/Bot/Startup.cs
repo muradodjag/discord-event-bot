@@ -1,5 +1,8 @@
 using Bot.Configurations;
 using Bot.Discord.Extensions;
+using Bot.Infrastructure.Extensions;
+using Bot.Infrastructure.Interfaces.Telegram;
+using Bot.Infrastructure.Telegram;
 using Color_Chan.Discord.Extensions;
 
 namespace Bot;
@@ -18,6 +21,7 @@ public class Startup
     {
         services.AddDiscord(Configuration);
         services.AddControllers();
+        
 
         services.ConfigureCors();
         services.ConfigureApiVersioning();

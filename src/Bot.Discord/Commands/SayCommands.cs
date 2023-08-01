@@ -2,6 +2,7 @@
 using Color_Chan.Discord.Commands.Attributes.ProvidedRequirements;
 using Color_Chan.Discord.Commands.MessageBuilders;
 using Color_Chan.Discord.Commands.Modules;
+using Color_Chan.Discord.Core.Common.API.DataModels.Application;
 using Color_Chan.Discord.Core.Common.Models.Interaction;
 using Color_Chan.Discord.Core.Results;
 
@@ -10,6 +11,7 @@ namespace Bot.Discord.Commands;
 /// <summary>
 ///     The command module for all say commands.
 /// </summary>
+[SlashCommandGroup("test", "test")]
 [UserRateLimit(5, 10)] // Sets the rate limit for this command module to 5 requests per 10 seconds per user.
 public class SayCommands : SlashCommandModule
 {

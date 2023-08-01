@@ -1,5 +1,8 @@
 using System.Reflection;
 using Bot.Configurations;
+using Bot.Infrastructure.Extensions;
+using Bot.Infrastructure.Interfaces.Telegram;
+using Bot.Infrastructure.Telegram;
 using Color_Chan.Discord.Extensions;
 using Serilog;
 
@@ -17,7 +20,7 @@ public class Program
             SerilogConfig.Configure(configuration);
 
             Log.Information("Starting Bot web host");
-
+            
             await host.RegisterSlashCommandsAsync(Assembly.Load("Bot.Discord")).ConfigureAwait(false);
             await host.RunAsync().ConfigureAwait(false);
 
@@ -38,6 +41,7 @@ public class Program
     {
         return Host.CreateDefaultBuilder(args)
                    .UseSerilog()
+                   
                    .ConfigureLogging(logging =>
                    {
                        logging.ClearProviders();

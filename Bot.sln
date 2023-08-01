@@ -22,6 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.persistence.MongoDb.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Discord.Tests", "tests\Bot.Discord.Tests\Bot.Discord.Tests.csproj", "{164FDDAC-A605-4D99-9862-4D887B511702}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Infrastructure", "src\Bot.Infrastructure\Bot.Infrastructure.csproj", "{25AB19DF-514A-4001-A9E9-39980E714264}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.Infrastructure.Interfaces", "src\Bot.Infrastructure.Interfaces\Bot.Infrastructure.Interfaces.csproj", "{2A49F487-8F03-48A1-86CA-625F173A1859}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,8 @@ Global
 		{1A428389-52D6-4258-86C7-584E4C16DA61} = {83117B5E-AF2C-4014-9511-CBB94D48460B}
 		{15AE13C5-B1DC-4B44-A641-7727420CCBD1} = {1A428389-52D6-4258-86C7-584E4C16DA61}
 		{164FDDAC-A605-4D99-9862-4D887B511702} = {83117B5E-AF2C-4014-9511-CBB94D48460B}
+		{25AB19DF-514A-4001-A9E9-39980E714264} = {B6273876-4DC1-4EFF-9196-AF3DD39E5375}
+		{2A49F487-8F03-48A1-86CA-625F173A1859} = {B6273876-4DC1-4EFF-9196-AF3DD39E5375}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{894CA837-79A3-4DA2-9225-DEF95D20C1BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -67,5 +73,13 @@ Global
 		{164FDDAC-A605-4D99-9862-4D887B511702}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{164FDDAC-A605-4D99-9862-4D887B511702}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{164FDDAC-A605-4D99-9862-4D887B511702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25AB19DF-514A-4001-A9E9-39980E714264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25AB19DF-514A-4001-A9E9-39980E714264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25AB19DF-514A-4001-A9E9-39980E714264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25AB19DF-514A-4001-A9E9-39980E714264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A49F487-8F03-48A1-86CA-625F173A1859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A49F487-8F03-48A1-86CA-625F173A1859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A49F487-8F03-48A1-86CA-625F173A1859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A49F487-8F03-48A1-86CA-625F173A1859}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -6,6 +6,11 @@ public class Server : BaseDocument
     ///     THe server id.
     /// </summary>
     public ulong GuildId { get; set; }
+    
+    /// <summary>
+    /// The telegram channel id.
+    /// </summary>
+    public ulong TelegramChannelId { get; set; }
 
     /// <summary>
     ///     Server name.

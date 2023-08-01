@@ -1,4 +1,5 @@
 ﻿using Bot.Discord.Pipelines;
+using Bot.Infrastructure.Extensions;
 using Bot.persistence.MongoDb.Extensions;
 using Color_Chan.Discord.Commands.Extensions;
 using Color_Chan.Discord.Configurations;
@@ -23,12 +24,15 @@ public static class ServiceCollectionExtensions
         {
             SlashCommandConfigs = slashOptions => { slashOptions.SendDefaultErrorMessage = true; }
         };
-
+        services.AddInfrastructure();
         services.AddInteractionPipeline<GuildDbPipeline>();
         services.AddInteractionPipeline<InteractionLoggingPipeline>();
 
         services.AddColorChanDiscord(token, Constants.PublicKey, Constants.BotId, config);
         services.AddMongoDb();
+        
+
+
 
         return services;
     }

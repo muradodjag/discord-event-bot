@@ -32,14 +32,16 @@ public class GuildDbPipeline : IInteractionPipeline
         {
             return await next();
         }
-
+        await AddUser(context);
         // Add a new guild to the database if it doesn't exist.
         var exists = await _unitOfWork.Servers.ExistsAsync(x => x.GuildId == context.GuildId.Value).ConfigureAwait(false);
+        
         if (!exists)
         {
             if (_logger.IsEnabled(LogLevel.Information))
                 _logger.LogInformation("Adding a new guild to the database ID: {Id}", context.GuildId.Value.ToString());
 
+            
             await _unitOfWork.Servers.AddAsync(new Server
             {
                 GuildId = context.GuildId.Value,
@@ -49,5 +51,23 @@ public class GuildDbPipeline : IInteractionPipeline
         }
 
         return await next();
+    }
+
+    public async Task AddUser(IInteractionContext context)
+    {
+        var exists = await _unitOfWork.Users.ExistsAsync(x => x.UserId == context.User.Id).ConfigureAwait(false);
+        if (!exists)
+        {
+            if (_logger.IsEnabled(LogLevel.Information))
+                _logger.LogInformation("Adding a new user to the database ID: {Id}", context.User.Id.ToString());
+
+            await _unitOfWork.Users.AddAsync(new User
+            {
+                UserId = context.User.Id,
+                TelegramId = 0,
+                DiscordName = context.User.Username,
+                TelegramName = "unknown"
+            }).ConfigureAwait(false);
+        }
     }
 }

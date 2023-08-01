@@ -22,4 +22,5 @@ public interface IUnitOfWork
     ///     Contains all the queries to the <see cref="Server" /> table/collection.
     /// </summary>
     IServerRepository Servers { get; }
+    IUserRepository Users { get; }
 }

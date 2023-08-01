@@ -15,6 +15,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IRequestsRepository, RequestRepository>();
         services.AddSingleton<IServerRepository, ServerRepository>();
         services.AddSingleton<IDailyStatsRepository, DailyStatRepository>();
+        services.AddSingleton<IUserRepository, UserRepository>();
 
         return services;
     }

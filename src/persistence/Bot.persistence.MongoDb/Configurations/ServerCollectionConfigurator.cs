@@ -20,6 +20,10 @@ public class ServerCollectionConfigurator : ICollectionConfigurator
               .SetElementName("GuildId")
               .SetSerializer(new UInt64Serializer(BsonType.Int64, new RepresentationConverter(true, false)))
               .SetIsRequired(true);
+            cm.MapMember(c => c.TelegramChannelId)
+                .SetElementName("TelegramChannelId")
+                .SetSerializer(new UInt64Serializer(BsonType.Int64, new RepresentationConverter(true, false)))
+                .SetIsRequired(false);
             cm.MapMember(c => c.Name)
               .SetElementName("Name")
               .SetIgnoreIfNull(true)

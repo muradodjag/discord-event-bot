@@ -6,11 +6,12 @@ namespace Bot.persistence.MongoDb.UnitOfWorks;
 /// <inheritdoc />
 public class UnitOfWork : IUnitOfWork
 {
-    public UnitOfWork(IRequestsRepository requestsRepository, IDailyStatsRepository dailyStatsRepository, IServerRepository serverRepository)
+    public UnitOfWork(IRequestsRepository requestsRepository, IDailyStatsRepository dailyStatsRepository, IServerRepository serverRepository, IUserRepository userRepository)
     {
         Requests = requestsRepository;
         DailyStats = dailyStatsRepository;
         Servers = serverRepository;
+        Users = userRepository;
     }
 
     /// <inheritdoc />
@@ -21,4 +22,5 @@ public class UnitOfWork : IUnitOfWork
 
     /// <inheritdoc />
     public IServerRepository Servers { get; }
+    public IUserRepository Users { get; }
 }
