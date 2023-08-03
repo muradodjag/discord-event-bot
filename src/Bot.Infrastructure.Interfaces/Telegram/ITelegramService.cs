@@ -7,5 +7,5 @@ public interface ITelegramService
     /// </summary>
     /// <param name="msg"> Message which we send to channel</param>
     /// <returns></returns>
-    Task SendMessage(string msg);
+    Task<bool> SendMessage(string msg);
 }

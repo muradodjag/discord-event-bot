@@ -11,7 +11,6 @@ namespace Bot.Discord.Commands;
 /// <summary>
 ///     The command module for all say commands.
 /// </summary>
-[SlashCommandGroup("test", "test")]
 [UserRateLimit(5, 10)] // Sets the rate limit for this command module to 5 requests per 10 seconds per user.
 public class SayCommands : SlashCommandModule
 {

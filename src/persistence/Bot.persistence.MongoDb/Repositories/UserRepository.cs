@@ -18,13 +18,13 @@ public class UserRepository : Repository<User>, IUserRepository
     }
 
     /// <inheritdoc />
-    public Task<User> GetUserAsync(ulong id)
+    public async Task<User> GetUserAsync(ulong id)
     {
-        return _mongoCollection.Find(x => x.UserId == id).FirstOrDefaultAsync();
+        return await _mongoCollection.Find(x => x.UserId == id).FirstOrDefaultAsync();
     }
 
     /// <inheritdoc />
-    public async Task<User> GetOrAddUserAsync(ulong id, string discordName,ulong? telegramId, string? telegramName)
+    public async Task<User> GetOrAddUserAsync(ulong id, string discordName)
     {
         var result = await _mongoCollection.Find(x => x.UserId == id).FirstOrDefaultAsync().ConfigureAwait(false);
         if (result is not null) return result;

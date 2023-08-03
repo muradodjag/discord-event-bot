@@ -1,4 +1,7 @@
-﻿using Bot.Discord.Pipelines;
+﻿using Bot.Discord.Commons;
+using Bot.Discord.Controllers;
+using Bot.Discord.Pipelines;
+using Bot.Discord.Services;
 using Bot.Infrastructure.Extensions;
 using Bot.persistence.MongoDb.Extensions;
 using Color_Chan.Discord.Commands.Extensions;
@@ -13,7 +16,7 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddDiscord(this IServiceCollection services, IConfiguration configuration)
     {
-        var token = configuration["BOT_TOKEN"];
+        var token = configuration["DISCORD:BOT_TOKEN"];
         if (token is null)
         {
             throw new NullReferenceException("Please set the BOT_TOKEN configuration!");
@@ -27,6 +30,9 @@ public static class ServiceCollectionExtensions
         services.AddInfrastructure();
         services.AddInteractionPipeline<GuildDbPipeline>();
         services.AddInteractionPipeline<InteractionLoggingPipeline>();
+        
+        services.AddSingleton<IDiscordService, DiscordService>();
+        services.AddSingleton<IVoiceStateUpdateController, VoiceStateUpdateController>();
 
         services.AddColorChanDiscord(token, Constants.PublicKey, Constants.BotId, config);
         services.AddMongoDb();

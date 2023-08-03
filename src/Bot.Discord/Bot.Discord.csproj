@@ -8,11 +8,13 @@
 
     <ItemGroup>
         <PackageReference Include="Color-Chan.Discord" Version="2.1.1" />
+        <PackageReference Include="Discord.Net.Core" Version="3.11.0" />
+        <PackageReference Include="Discord.Net.WebSocket" Version="3.11.0" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\Bot.Infrastructure\Bot.Infrastructure.csproj" />
-        <ProjectReference Include="..\persistence\Bot.persistence.MongoDb\Bot.persistence.MongoDb.csproj"/>
+        <ProjectReference Include="..\persistence\Bot.persistence.MongoDb\Bot.persistence.MongoDb.csproj" />
     </ItemGroup>
 
 

@@ -30,8 +30,14 @@ public class SendMsgToTelegram : SlashCommandModule
         string text
     )
     {
-         await _telegramService.SendMessage(text);
-        return  FromSuccess("Your message send");
+        bool result =  await _telegramService.SendMessage(text);
+        if (result)
+        {
+            return  FromSuccess("Your message was sent");
+        }
+
+        return FromError("Your message wasn't sent");
+
         // Build the embedded response.
 
     }

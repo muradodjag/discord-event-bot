@@ -27,5 +27,5 @@ public interface IUserRepository : IRepository<User>
     ///     The task result contains the requested <see cref="User" />.
     /// </returns>
 
-    Task<User> GetOrAddUserAsync(ulong id, string discordName,ulong? telegramId, string? telegramName);
+    Task<User> GetOrAddUserAsync(ulong id, string discordName);
 }

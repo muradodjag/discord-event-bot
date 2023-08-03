@@ -1,5 +1,6 @@
 using System.Reflection;
 using Bot.Configurations;
+using Bot.Discord.Commons;
 using Bot.Infrastructure.Extensions;
 using Bot.Infrastructure.Interfaces.Telegram;
 using Bot.Infrastructure.Telegram;
@@ -17,12 +18,15 @@ public class Program
             var host = CreateHostBuilder(args).Build();
 
             var configuration = host.Services.GetRequiredService<IConfiguration>();
+            var discordSocketService = host.Services.GetRequiredService<IDiscordService>();
             SerilogConfig.Configure(configuration);
 
             Log.Information("Starting Bot web host");
-            
+            await discordSocketService.StartAsync(configuration["DISCORD:BOT_TOKEN"]).ConfigureAwait(false);
             await host.RegisterSlashCommandsAsync(Assembly.Load("Bot.Discord")).ConfigureAwait(false);
             await host.RunAsync().ConfigureAwait(false);
+
+            
 
             return 0;
         }
