@@ -17,9 +17,8 @@
         <ProjectReference Include="..\persistence\Bot.persistence.MongoDb\Bot.persistence.MongoDb.csproj" />
     </ItemGroup>
 
-
     <ItemGroup>
-      <Folder Include="Common\" />
+      <Folder Include="Components" />
     </ItemGroup>
 
 </Project>
