@@ -7,7 +7,7 @@ public class ConnectionStringHelper
     public static string GetMongoDbConnectionString(IConfiguration configuration)
     {
         // https://docs.mongodb.com/manual/reference/connection-string/
-        var connectionString = configuration["MONGODB__CONNECTION_STRING"];
+        var connectionString = configuration["MONGODB:CONNECTION_STRING"];
 
         if (string.IsNullOrWhiteSpace(connectionString))
         {
