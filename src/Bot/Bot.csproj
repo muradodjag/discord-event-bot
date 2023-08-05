@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <UserSecretsId>c02c7734-e010-4448-bf91-fb377b41957c</UserSecretsId>
+        <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
     <ItemGroup>
@@ -24,6 +24,10 @@
         <PackageReference Include="Serilog.Extensions.Logging" Version="7.0.0" />
         <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
         <PackageReference Include="Serilog.Sinks.MongoDB" Version="5.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Dockerfile" />
     </ItemGroup>
 
 </Project>
