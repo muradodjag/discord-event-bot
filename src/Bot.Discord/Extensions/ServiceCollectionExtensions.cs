@@ -16,7 +16,7 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddDiscord(this IServiceCollection services, IConfiguration configuration)
     {
-        var token = configuration["DISCORD:BOT_TOKEN"];
+        var token = configuration["DISCORD__BOT_TOKEN"];
         if (token is null)
         {
             throw new NullReferenceException("Please set the BOT_TOKEN configuration!");

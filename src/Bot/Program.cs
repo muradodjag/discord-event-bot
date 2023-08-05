@@ -22,7 +22,7 @@ public class Program
             SerilogConfig.Configure(configuration);
 
             Log.Information("Starting Bot web host");
-            await discordSocketService.StartAsync(configuration["DISCORD:BOT_TOKEN"]).ConfigureAwait(false);
+            await discordSocketService.StartAsync(configuration["DISCORD__BOT_TOKEN"]).ConfigureAwait(false);
             await host.RegisterSlashCommandsAsync(Assembly.Load("Bot.Discord")).ConfigureAwait(false);
             await host.RunAsync().ConfigureAwait(false);
 

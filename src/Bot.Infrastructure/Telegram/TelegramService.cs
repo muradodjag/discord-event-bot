@@ -11,7 +11,7 @@ public class TelegramService : ITelegramService
     protected readonly TelegramBotClient _client;
     public TelegramService(IConfiguration configuration)
     {
-        _client = new TelegramBotClient(configuration["TELEGRAM:BOT_TOKEN"]);
+        _client = new TelegramBotClient(configuration["TELEGRAM__BOT_TOKEN"]);
     }
     public async Task<bool> SendMessage(string msg)
     {
